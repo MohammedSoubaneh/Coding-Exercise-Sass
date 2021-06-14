@@ -1,0 +1,7 @@
+RESPONSIVENESS:
+Should look good anywhere from small screens (375px min) to very large (~2560px).
+Use your discretion for when the video should max out in terms of its width.
+INTERACTIVITY:
+- On 'see how' button click modal should open and autoplay
+- When modal is open it can be closed by clicking X icon, dark modal background, or hitting ESC key
+- Log in the console the timestamp when the modal is opened or closed

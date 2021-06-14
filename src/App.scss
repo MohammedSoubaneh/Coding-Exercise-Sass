@@ -1,0 +1,359 @@
+$mobileS: 250px;
+
+$mobileM: 400px;
+
+$mobileL: 550px;
+
+$tablet: 700px;
+
+$laptop: 1024px;
+
+$laptopL: 1450px;
+
+$desktop: 1920px;
+
+// $screen-xl-min:
+
+@font-face {
+    font-family: 'Soleil Semibold';
+    src: url(./Components/Assets/Soleil_Semibold.otf) format('opentype');
+}
+.innerContainer {
+        display: grid;
+        grid-template-columns: repeat(23, 1fr);
+        grid-auto-rows: 50px;
+        font-family: 'Soleil Semibold';
+    .blackbox {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(23, 1fr);
+        z-index: 20;
+        .starWarsVideo {
+            position: relative;
+            right: 1px;
+            grid-column: 2 / 23;
+            @media screen and (max-width: $laptopL) {
+                grid-column: 1 / 24;
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+            @media screen and (max-width: $laptop) {
+                grid-column: 1 / 24;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            @media screen and (max-width: $tablet) {
+                grid-column: 1 / 24;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            .soundVideo {
+                width: 100%;
+                height: 45rem;
+                object-fit: fill;
+                @media screen and (max-width: $laptopL) {
+                    height: 40rem;
+                    position: relative;
+                    bottom: 3rem;
+                }
+                @media screen and (max-width: $laptop) {
+                    height: 30rem;
+                    position: relative;
+                    bottom: 8rem;
+                }
+                @media screen and (max-width: $tablet) {
+                    height: 25rem;
+                    bottom: 8rem;
+                }
+                @media screen and (max-width: $mobileL) {
+                    height: 20rem;
+                }
+                @media screen and (max-width: $mobileM) {
+                    height: 15rem;
+                }
+                @media screen and (max-width: $mobileS) {
+                    height: 10rem;
+                }
+            }
+        }
+        .close {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 32px;
+            height: 32px;
+            opacity: 0.3;
+            cursor: pointer;
+          }
+          .close:hover {
+            opacity: 1;
+          }
+          .close:before, .close:after {
+            position: absolute;
+            left: 15px;
+            content: ' ';
+            height: 33px;
+            width: 2px;
+            background-color: white;
+          }
+          .close:before {
+            transform: rotate(45deg);
+          }
+          .close:after {
+            transform: rotate(-45deg);
+          }
+    }
+    .heroSectionWrapper {
+        grid-column: 2 / 23;
+        grid-row: 2 / span 14;
+        border-radius: 30px;
+        @media screen and (max-width: $mobileM) {
+            grid-row: 4 / span 11;       
+        }
+        .backgroundVideo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30px;
+            overflow: hidden;
+            @media screen and (max-width: $laptop) {
+                height: 75%;
+            }
+            @media screen and (max-width: $mobileM) {
+                border-radius: 10px;   
+            }
+        }
+    }
+    .textOverlay {
+        grid-column: 1 / 24;
+        grid-row: 2 / span 14;
+        margin: auto;
+        width: 100%;
+        z-index: 2;
+        
+        @media screen and (max-width: $laptop) {
+            grid-row: 1 / span 14;
+        }
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2.5vw;
+            @media screen and (max-width: $laptop) {
+                font-size: 3vw;
+            }
+            @media screen and (max-width: $tablet) {
+                font-size: 5vw;
+            }
+            @media screen and (max-width: $mobileL) {
+                font-size: 5vw;
+            }
+            @media screen and (max-width: $mobileS) {
+                font-size: 6vw;
+            }
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            .seeHow {
+                text-align: center;
+                color: black;
+                border-color: white;
+                border-style: solid;
+                border-radius: 50px;
+                border-width: 1px;
+                font-size: 0.75vw;
+                width: 11vw;
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                transition: all .5s ease;
+                color: #fff;
+                background-color : transparent;
+                @media screen and (max-width: $laptop) {
+                    font-size: 1.2vw;
+                    width: 20vw;
+                }
+                @media screen and (max-width: $tablet) {
+                    font-size: 2vw;
+                    width: 25vw;
+                }
+                @media screen and (max-width: $mobileM) {
+                    font-size: 3.5vw;
+                    width: 40vw;
+                }
+                @media screen and (max-width: $mobileS) {
+                    font-size: 4vw;
+                    width: 50vw;
+                }
+                p {
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    letter-spacing: 2px;
+                }
+                .play {
+                    justify-items: flex-end;
+                    box-sizing: border-box;
+                    width: auto;
+                    height: 10px;
+                    border-style: solid;
+                    border-width: 0.32rem 0px 0.32rem 0.7rem;
+                    border-color: transparent transparent transparent white;
+                    text-align: center;
+                    margin: 0;
+                    position: relative;
+                    top: 50%;
+                    -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                    background: transparent
+                }
+                .play:hover {
+                    border-color: transparent transparent transparent black;
+                }
+            }
+            .seeHow:hover {
+                color: black;
+                background-color: #fff;
+                .play {
+                    border-color: transparent transparent transparent black;
+                }
+            }
+
+        }
+    }
+    .footer {
+        grid-column: 1 / 24;
+        grid-row: 17;
+        display: grid;
+        grid-template-columns: repeat(23, 1fr);
+        @media screen and (max-width: $laptop) {
+            grid-row: 13;
+        }
+        .approval {
+            grid-column: 9 / 11;
+            display: flex;
+
+            @media screen and (max-width: $laptop) {
+                grid-column: 7 / 11;   
+            }
+
+            @media screen and (max-width: $mobileL) {
+                grid-column: 6 / 12;
+            }
+            @media screen and (max-width: $tablet) {
+                grid-column: 7 / 12;
+            }
+            @media screen and (max-width: $mobileM) {
+                grid-column: 3 / 12;
+            }
+            
+            img {
+                width: 3vw;
+                margin-right: 20px;
+                height: auto;
+                @media screen and (max-width: $laptopL) {
+                    width: 7vw;
+                }
+                @media screen and (max-width: $laptop) {
+                    width: 7vw;
+                }
+                @media screen and (max-width: $tablet) {
+                    width: 10vw;
+                }
+                @media screen and (max-width: $mobileM) {
+                    width: 8vw;
+                }
+                @media screen and (max-width: $mobileL) {
+                    width: 10vw;
+                }
+                @media screen and (max-width: $mobileM) {
+                    margin-right: 10px;
+                    width: 10vw;
+                }
+            }
+            p {
+                font-size: 0.75vw;
+                position: relative;
+                bottom: 0.5rem;
+                @media screen and (max-width: $laptopL) {
+                    font-size: 0.9vw;
+                }
+                @media screen and (max-width: $laptop) {
+                    font-size: 1.5vw;
+                }
+                @media screen and (max-width: $mobileL) {
+                    font-size: 2vw;
+                }
+                @media screen and (max-width: $tablet) {
+                    font-size: 2vw;
+                }
+                @media screen and (max-width: $mobileM) {
+                    font-size: 3vw;
+                }
+                @media screen and (max-width: $mobileS) {
+                    font-size: 4vw;
+                }
+            }
+        }
+        .certified {
+            grid-column: 13 / 17;
+            display: flex;
+            @media screen and (max-width: $laptop) {
+                grid-column: 14 / 23;   
+            }
+            @media screen and (max-width: $mobileM) {
+                grid-column: 12 / 24;
+            }
+            img {
+                width: 3vw;
+                margin-right: 20px;
+                height: auto;
+                @media screen and (max-width: $laptopL) {
+                    width: 4vw;
+                }
+                @media screen and (max-width: $laptop) {
+                    width: 6vw;
+                }
+                @media screen and (max-width: $tablet) {
+                    width: 9vw;
+                }
+                @media screen and (max-width: $mobileL) {
+                    width: 9vw;
+                }
+                @media screen and (max-width: $mobileM) {
+                    width: 11vw;
+                    margin-right: 10px;
+                }
+
+            }
+            p {
+                font-size: 0.75vw;
+                position: relative;
+                bottom: 0.5rem;
+                @media screen and (max-width: $laptopL) {
+                    font-size: 0.9vw;
+                }
+                @media screen and (max-width: $laptop) {
+                    font-size: 1.5vw;
+                }
+                @media screen and (max-width: $mobileL) {
+                    font-size: 2vw;
+                }
+                @media screen and (max-width: $tablet) {
+                    font-size: 2vw;
+                }
+                @media screen and (max-width: $mobileM) {
+                    font-size: 3vw;
+                }
+                @media screen and (max-width: $mobileS) {
+                    font-size: 4vw;
+                }
+            }
+        }
+    }
+}

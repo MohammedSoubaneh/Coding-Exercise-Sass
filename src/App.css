@@ -1,38 +1,588 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Soleil Semibold';
+  src: url(./Components/Assets/Soleil_Semibold.otf) format("opentype");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.innerContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[23];
+      grid-template-columns: repeat(23, 1fr);
+  grid-auto-rows: 50px;
+  font-family: 'Soleil Semibold';
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.innerContainer .blackbox {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[23];
+      grid-template-columns: repeat(23, 1fr);
+  z-index: 20;
+}
+
+.innerContainer .blackbox .starWarsVideo {
+  position: relative;
+  right: 1px;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 21;
+  grid-column: 2 / 23;
+}
+
+@media screen and (max-width: 1450px) {
+  .innerContainer .blackbox .starWarsVideo {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 23;
+    grid-column: 1 / 24;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .innerContainer .blackbox .starWarsVideo {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 23;
+    grid-column: 1 / 24;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .innerContainer .blackbox .starWarsVideo {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 23;
+    grid-column: 1 / 24;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.innerContainer .blackbox .starWarsVideo .soundVideo {
+  width: 100%;
+  height: 45rem;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+@media screen and (max-width: 1450px) {
+  .innerContainer .blackbox .starWarsVideo .soundVideo {
+    height: 40rem;
+    position: relative;
+    bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .innerContainer .blackbox .starWarsVideo .soundVideo {
+    height: 30rem;
+    position: relative;
+    bottom: 8rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .innerContainer .blackbox .starWarsVideo .soundVideo {
+    height: 25rem;
+    bottom: 8rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .innerContainer .blackbox .starWarsVideo .soundVideo {
+    height: 20rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .innerContainer .blackbox .starWarsVideo .soundVideo {
+    height: 15rem;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .innerContainer .blackbox .starWarsVideo .soundVideo {
+    height: 10rem;
+  }
+}
+
+.innerContainer .blackbox .close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.innerContainer .blackbox .close:hover {
+  opacity: 1;
+}
+
+.innerContainer .blackbox .close:before, .innerContainer .blackbox .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 33px;
+  width: 2px;
+  background-color: white;
+}
+
+.innerContainer .blackbox .close:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.innerContainer .blackbox .close:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.innerContainer .heroSectionWrapper {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 21;
+  grid-column: 2 / 23;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 14;
+  grid-row: 2 / span 14;
+  border-radius: 30px;
+}
+
+@media screen and (max-width: 400px) {
+  .innerContainer .heroSectionWrapper {
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 11;
+    grid-row: 4 / span 11;
+  }
+}
+
+.innerContainer .heroSectionWrapper .backgroundVideo {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+  .innerContainer .heroSectionWrapper .backgroundVideo {
+    height: 75%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .innerContainer .heroSectionWrapper .backgroundVideo {
+    border-radius: 10px;
+  }
+}
+
+.innerContainer .textOverlay {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 23;
+  grid-column: 1 / 24;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 14;
+  grid-row: 2 / span 14;
+  margin: auto;
+  width: 100%;
+  z-index: 2;
+}
+
+@media screen and (max-width: 1024px) {
+  .innerContainer .textOverlay {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 14;
+    grid-row: 1 / span 14;
+  }
+}
+
+.innerContainer .textOverlay h1 {
+  text-align: center;
   color: white;
+  font-size: 2.5vw;
 }
 
-.App-link {
-  color: #61dafb;
+@media screen and (max-width: 1024px) {
+  .innerContainer .textOverlay h1 {
+    font-size: 3vw;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 700px) {
+  .innerContainer .textOverlay h1 {
+    font-size: 5vw;
   }
 }
+
+@media screen and (max-width: 550px) {
+  .innerContainer .textOverlay h1 {
+    font-size: 5vw;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .innerContainer .textOverlay h1 {
+    font-size: 6vw;
+  }
+}
+
+.innerContainer .textOverlay .center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.innerContainer .textOverlay .center .seeHow {
+  text-align: center;
+  color: black;
+  border-color: white;
+  border-style: solid;
+  border-radius: 50px;
+  border-width: 1px;
+  font-size: 0.75vw;
+  width: 11vw;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  color: #fff;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 1024px) {
+  .innerContainer .textOverlay .center .seeHow {
+    font-size: 1.2vw;
+    width: 20vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .innerContainer .textOverlay .center .seeHow {
+    font-size: 2vw;
+    width: 25vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .innerContainer .textOverlay .center .seeHow {
+    font-size: 3.5vw;
+    width: 40vw;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .innerContainer .textOverlay .center .seeHow {
+    font-size: 4vw;
+    width: 50vw;
+  }
+}
+
+.innerContainer .textOverlay .center .seeHow p {
+  margin-left: 10px;
+  margin-right: 10px;
+  letter-spacing: 2px;
+}
+
+.innerContainer .textOverlay .center .seeHow .play {
+  justify-items: flex-end;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: auto;
+  height: 10px;
+  border-style: solid;
+  border-width: 0.32rem 0px 0.32rem 0.7rem;
+  border-color: transparent transparent transparent white;
+  text-align: center;
+  margin: 0;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: transparent;
+}
+
+.innerContainer .textOverlay .center .seeHow .play:hover {
+  border-color: transparent transparent transparent black;
+}
+
+.innerContainer .textOverlay .center .seeHow:hover {
+  color: black;
+  background-color: #fff;
+}
+
+.innerContainer .textOverlay .center .seeHow:hover .play {
+  border-color: transparent transparent transparent black;
+}
+
+.innerContainer .footer {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 23;
+  grid-column: 1 / 24;
+  -ms-grid-row: 17;
+  grid-row: 17;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[23];
+      grid-template-columns: repeat(23, 1fr);
+}
+
+@media screen and (max-width: 1024px) {
+  .innerContainer .footer {
+    -ms-grid-row: 13;
+    grid-row: 13;
+  }
+}
+
+.innerContainer .footer .approval {
+  -ms-grid-column: 9;
+  -ms-grid-column-span: 2;
+  grid-column: 9 / 11;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+  .innerContainer .footer .approval {
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 4;
+    grid-column: 7 / 11;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .innerContainer .footer .approval {
+    -ms-grid-column: 6;
+    -ms-grid-column-span: 6;
+    grid-column: 6 / 12;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .innerContainer .footer .approval {
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 5;
+    grid-column: 7 / 12;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .innerContainer .footer .approval {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 9;
+    grid-column: 3 / 12;
+  }
+}
+
+.innerContainer .footer .approval img {
+  width: 3vw;
+  margin-right: 20px;
+  height: auto;
+}
+
+@media screen and (max-width: 1450px) {
+  .innerContainer .footer .approval img {
+    width: 7vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .innerContainer .footer .approval img {
+    width: 7vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .innerContainer .footer .approval img {
+    width: 10vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .innerContainer .footer .approval img {
+    width: 8vw;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .innerContainer .footer .approval img {
+    width: 10vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .innerContainer .footer .approval img {
+    margin-right: 10px;
+    width: 10vw;
+  }
+}
+
+.innerContainer .footer .approval p {
+  font-size: 0.75vw;
+  position: relative;
+  bottom: 0.5rem;
+}
+
+@media screen and (max-width: 1450px) {
+  .innerContainer .footer .approval p {
+    font-size: 0.9vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .innerContainer .footer .approval p {
+    font-size: 1.5vw;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .innerContainer .footer .approval p {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .innerContainer .footer .approval p {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .innerContainer .footer .approval p {
+    font-size: 3vw;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .innerContainer .footer .approval p {
+    font-size: 4vw;
+  }
+}
+
+.innerContainer .footer .certified {
+  -ms-grid-column: 13;
+  -ms-grid-column-span: 4;
+  grid-column: 13 / 17;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+  .innerContainer .footer .certified {
+    -ms-grid-column: 14;
+    -ms-grid-column-span: 9;
+    grid-column: 14 / 23;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .innerContainer .footer .certified {
+    -ms-grid-column: 12;
+    -ms-grid-column-span: 12;
+    grid-column: 12 / 24;
+  }
+}
+
+.innerContainer .footer .certified img {
+  width: 3vw;
+  margin-right: 20px;
+  height: auto;
+}
+
+@media screen and (max-width: 1450px) {
+  .innerContainer .footer .certified img {
+    width: 4vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .innerContainer .footer .certified img {
+    width: 6vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .innerContainer .footer .certified img {
+    width: 9vw;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .innerContainer .footer .certified img {
+    width: 9vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .innerContainer .footer .certified img {
+    width: 11vw;
+    margin-right: 10px;
+  }
+}
+
+.innerContainer .footer .certified p {
+  font-size: 0.75vw;
+  position: relative;
+  bottom: 0.5rem;
+}
+
+@media screen and (max-width: 1450px) {
+  .innerContainer .footer .certified p {
+    font-size: 0.9vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .innerContainer .footer .certified p {
+    font-size: 1.5vw;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .innerContainer .footer .certified p {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .innerContainer .footer .certified p {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .innerContainer .footer .certified p {
+    font-size: 3vw;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .innerContainer .footer .certified p {
+    font-size: 4vw;
+  }
+}
+/*# sourceMappingURL=App.css.map */
