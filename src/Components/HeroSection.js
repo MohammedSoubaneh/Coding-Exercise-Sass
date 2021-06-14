@@ -1,12 +1,12 @@
 import React from 'react'
-import LargerBackgroundVideo from './Assets/samplevideo-16x9-10s.mp4';
+import BackgroundVideo from './Assets/samplevideo-16x9-10s.mp4';
 
 function HeroSection() {
     return (
         <>
         <div className='heroSectionWrapper'>
           <video className='backgroundVideo' autoPlay loop muted>
-            <source src={LargerBackgroundVideo} type='video/mp4' />
+            <source src={BackgroundVideo} type='video/mp4' />
           </video>
         </div>
         </>
